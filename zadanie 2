@@ -1,0 +1,46 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+ 
+int main()
+{
+    setlocale(LC_ALL, "russian");
+    int m, n, i, j;
+    cout << "введите размерность матрицы ";
+    cin >> n >> m;
+    cout << "\n результаты\n";
+    int** a = new int*[n]; // создание массива указателей
+    for (i = 0; i < n; i++)
+    {
+        a[i] = new int[m]; // создание элементов
+    }
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < m; j++)
+        {
+            cin >> a[i][j]; //
+            cout << a[i][j] << " \t"; // вывод массива на экран
+        }
+        cout << endl;
+    }
+ 
+    cout << "Перестроенный массив" << endl;
+    
+    for (size_t i = 0; i < n; i++) {
+ 
+        for (size_t j = 0; j < m; j++) {
+ 
+            cout
+                << a[i][j]
+                << " ";
+ 
+        }
+ 
+        cout
+            << endl;
+ 
+    }
+ 
+    system("pause");
+    return 0;
+}
